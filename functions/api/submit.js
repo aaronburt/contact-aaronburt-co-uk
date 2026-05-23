@@ -10,7 +10,7 @@ export async function onRequestPost(context) {
             });
         }
 
-        const turnstileSecret = context.env.TURNSTILE_SECRET || '0x4AAAAAADSiXbjJPkUCfud2GNdPCSlZVu4';
+        const turnstileSecret = context.env.TURNSTILE_SECRET;
         try {
             const formData = new FormData();
             formData.append('secret', turnstileSecret);

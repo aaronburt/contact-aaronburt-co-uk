@@ -41,7 +41,7 @@ async function authenticate(context) {
 
 async function verifyTurnstile(context, token) {
     try {
-        const secretKey = context.env.TURNSTILE_SECRET || '0x4AAAAAADSiXbjJPkUCfud2GNdPCSlZVu4';
+        const secretKey = context.env.TURNSTILE_SECRET;
         const verifyFormData = new FormData();
         verifyFormData.append('secret', secretKey);
         verifyFormData.append('response', token);

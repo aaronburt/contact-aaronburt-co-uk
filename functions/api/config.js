@@ -1,7 +1,7 @@
 export async function onRequestGet(context) {
     try {
         return new Response(JSON.stringify({
-            turnstileSiteKey: context.env.TURNSTILE_SITE_KEY || '0x4AAAAAADSiXQi4uE18ynxQ'
+            turnstileSiteKey: context.env.TURNSTILE_SITE_KEY
         }), {
             headers: { 'Content-Type': 'application/json' }
         });
