@@ -1,0 +1,171 @@
+:root {
+    --bg-light: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.55);
+    --border-light: rgba(255, 255, 255, 0.5);
+    --border-hover: rgba(255, 255, 255, 0.8);
+    --card-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.08), 0 0 1px rgba(15, 23, 42, 0.1);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --primary: #7c3aed;
+    --primary-glow: rgba(124, 58, 237, 0.15);
+    --secondary: #0891b2;
+    --secondary-glow: rgba(8, 145, 178, 0.15);
+    --accent: #2563eb;
+    --success: #10b981;
+    --success-glow: rgba(16, 185, 129, 0.15);
+    --danger: #ef4444;
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --body-bg: radial-gradient(circle at 50% 0%, #eef2f6 0%, #f8fafc 100%);
+    --input-bg: rgba(255, 255, 255, 0.5);
+    --input-border: rgba(15, 23, 42, 0.06);
+    --input-focus-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-light: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.45);
+        --border-light: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(255, 255, 255, 0.16);
+        --card-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.15);
+        --text-primary: #ffffff;
+        --text-secondary: #f1f5f9;
+        --text-muted: #cbd5e1;
+        --primary: #a78bfa;
+        --primary-glow: rgba(167, 139, 250, 0.2);
+        --secondary: #22d3ee;
+        --secondary-glow: rgba(34, 211, 238, 0.2);
+        --accent: #60a5fa;
+        --success: #34d399;
+        --success-glow: rgba(52, 211, 153, 0.2);
+        --danger: #f87171;
+
+        --body-bg: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+        --input-bg: rgba(30, 41, 59, 0.55);
+        --input-border: rgba(255, 255, 255, 0.12);
+        --input-focus-bg: #1e293b;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--body-bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 2rem 1rem;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.7;
+}
+
+.orb-1 {
+    top: -10%;
+    left: 10%;
+    width: 45vw;
+    height: 45vw;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+}
+
+.orb-2 {
+    bottom: -10%;
+    right: 5%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(8, 145, 178, 0.1) 0%, transparent 70%);
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.1rem 1.75rem;
+    border-radius: 16px;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35);
+    filter: brightness(1.05);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.turnstile-container {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

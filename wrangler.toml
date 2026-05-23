@@ -1,0 +1,11 @@
+name = "contact-aaron"
+pages_build_output_dir = "."
+compatibility_date = "2026-05-19"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "contact-db"
+database_id = "637e3906-ada5-419d-98d1-52297a4f404a"
+
+[vars]
+TURNSTILE_SITE_KEY = "0x4AAAAAADSiXQi4uE18ynxQ"
